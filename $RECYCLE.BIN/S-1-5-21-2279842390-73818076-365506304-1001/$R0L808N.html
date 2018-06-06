@@ -1,0 +1,70 @@
+<p>
+  newteacher works!
+</p>
+<!--<form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
+
+  <label>SCHOOL ID </label>
+
+  <select name="School_Id" ngModel >
+          <option value="0">School Id</option>
+          <option *ngFor="let school of Schools" value={{school.School_Id}}>
+              {{school.School_Id}}
+          </option>
+      </select><br>
+
+<form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
+  School_Id:<input type="text" name="School_Id"  ngModel><br>
+  TEACHER ID:<input type="text" name="Teacher_Id"  ngModel><br>
+
+First_Name:<input type="text" name="First_Name"  ngModel><br>
+Last_Name:<input type="text" name="Last_Name"  ngModel><br>
+
+Date_of_Birth:<input type="text" name="Date_of_Birth"  ngModel><br>
+Age:<input type="text" name="Age"  ngModel><br>
+Qualification:<input type="text" name="Qualification"  ngModel><br>
+Package:<input type="text" name="Package"  ngModel><br>
+Address:<input type="text" name="Address"  ngModel><br>
+Phone_Number:<input type="text" name="Phone_Number"  ngModel><br>
+Experience:<input type="text" name="Experience"  ngModel><br>
+Previous_School:<input type="text" name="Previous_School"  ngModel><br>
+-->
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of teachers; let i = index">
+            <td>
+                <input [(ngModel)]="t.FirstName" class="form-control" type="text" name="{{t.code}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="t.name" class="form-control" type="text" name="{{t.name}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="t.price" class="form-control" type="text" name="{{t.price}}" />
+            </td>
+            <td>
+                <button class="btn btn-default"  type="button" (click)="deleteValue(i)">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name" name="newAttributeName" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.price" name="newAttributePrice" />
+            </td>
+            <td>
+                <button class="btn btn-default" type="button" (click)="addValue()">Add</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
